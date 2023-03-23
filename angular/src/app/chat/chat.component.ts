@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-chat',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
+  formGroup!: FormGroup;
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.formGroup = this.formBuilder.group({
+      REQ: ['']
+    })
+  }
+
+  onSubmit(submitFormGroup: FormGroup){
+    console.log(submitFormGroup.value.REQ);
   }
 
 }
