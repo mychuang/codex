@@ -4,7 +4,7 @@ services:
     env: python
     plan: free  # <--- 關鍵設定！改為免費方案
     buildCommand: cd flask_server && pip install -r requirements.txt
-    startCommand: cd flask_server && python flask_server/server.py
+    startCommand: python flask_server/server.py
     envVars:
       - key: OPENAI_API_KEY
         sync: false
